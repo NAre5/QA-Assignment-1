@@ -47,4 +47,23 @@ class NamesSystem {
         System.out.println(count);
         return count;
     }
+
+    /**
+     * @param size - length of substrings we inspect
+     * @return for each substring (in length of size) from our names' array we print
+     * the substring and his correspond number of appearances in the names' array.
+     */
+    static Map<String, Integer> CountAllStrings(int size) {
+        Map<String, Integer> counting = new HashMap<>();
+        for (String name : names) {
+            for (int i = 0; i + size - 1 < name.length(); i++) {
+                String subName = name.substring(i, i + size);
+                counting.put(subName, counting.getOrDefault(subName, 0) + 1);
+            }
+        }
+        for (Map.Entry<String, Integer> entry : counting.entrySet()) {
+            System.out.println(String.format("%s:%s", entry.getKey(),entry.getValue()));
+        }
+        return counting;
+    }
 }
