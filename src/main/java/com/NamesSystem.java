@@ -32,5 +32,19 @@ class NamesSystem {
         }
     }
 
+    /**
+     *
+     * @param s - a string
+     * @return how many names from the names' array contains the string s as a substring
+     */
+    static int CountSpecificString(String s) {
+        int count = 0;
+        for (String name : names) {
+            if (name.contains(s))
+                count++;
+        }
 
+        System.out.println(count);
+        return count;
+    }
 }
