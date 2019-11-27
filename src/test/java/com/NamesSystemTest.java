@@ -2,8 +2,7 @@ package com;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -31,6 +30,23 @@ public class NamesSystemTest {
         int n = 100;
         Map<String, Integer> actual = NamesSystem.CountAllStrings(n);
         Map<String, Integer> expected = new HashMap<>();
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void countMaxString() {
+        int n = 10;
+        List<String> actual = NamesSystem.CountMaxString(n);
+        List<String> expected = Arrays.asList("Christabel");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void countMaxStringCheckMultiple() {
+        int n = 10;
+        List<String> actual = NamesSystem.CountMaxString(n);
+        List<String> expected = Arrays.asList("Christabel");
+        //TODO find adn check for list bigger then 1 object
+        //        assertEquals(expected, actual);
     }
 }
