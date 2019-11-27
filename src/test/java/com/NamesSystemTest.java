@@ -1,4 +1,5 @@
 package com;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 
 import org.junit.Test;
 
@@ -37,7 +38,7 @@ public class NamesSystemTest {
     public void countMaxString() {
         int n = 10;
         List<String> actual = NamesSystem.CountMaxString(n);
-        List<String> expected = Arrays.asList("Christabel");
+        List<String> expected = Arrays.asList("christabel");
         assertEquals(expected, actual);
     }
 
@@ -48,5 +49,15 @@ public class NamesSystemTest {
         List<String> expected = Arrays.asList("Christabel");
         //TODO find adn check for list bigger then 1 object
         //        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void allIncludesString() {
+        String s = "YasdsErickafas";
+        List<String> actual = NamesSystem.AllIncludesString(s);
+        List<String> expected = Arrays.asList("ericka","erick","eric","rick");
+        assertThat("List equality without order",
+                actual, containsInAnyOrder(expected.toArray()));
+
     }
 }
