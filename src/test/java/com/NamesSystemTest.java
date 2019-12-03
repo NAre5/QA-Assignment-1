@@ -60,4 +60,9 @@ public class NamesSystemTest {
                 actual, containsInAnyOrder(expected.toArray()));
 
     }
+
+    @Test
+    public void generateName() {
+        String actual = NamesSystem.GenerateName();
+    }
 }

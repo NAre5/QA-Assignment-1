@@ -1,5 +1,7 @@
 package com;
 
+import org.docopt.Docopt;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.Stream;
@@ -10,6 +12,30 @@ import java.util.stream.Stream;
  */
 class NamesSystem {
     private static String[] names = null;//array contains names for the class
+
+    private static final String doc =
+            "Naval Fate.\n"
+                    + "\n"
+                    + "Usage:\n"
+                    + "  NamesSystem CountSpecificString STRING\n"
+                    + "  NamesSystem CountAllStrings LENGTH\n"
+                    + "  NamesSystem CountMaxString LENGTH\n"
+                    + "  naval_fate AllIncludesString STRING\n"
+                    + "\n";// input instructions for input through main
+
+    public static void main(String[] args) {
+//        args = new String[]{ "CountAllStrings", "10"};
+        Map<String, Object> opts =
+                new Docopt(doc).withVersion("NamesSystem 1.0").parse(args);// arguments goes into map where it keep them
+        if ((Boolean) opts.get("CountSpecificString"))
+            CountSpecificString((String) opts.get("STRING"));
+        if ((Boolean) opts.get("CountAllStrings"))
+            CountAllStrings(Integer.parseInt((String) opts.get("LENGTH")));
+        if ((Boolean) opts.get("CountMaxString"))
+            CountMaxString(Integer.parseInt((String) opts.get("LENGTH")));
+        if ((Boolean) opts.get("AllIncludesString"))
+            AllIncludesString((String) opts.get("STRING"));
+    }
 
     //This code will initiate the names array from the names' file (once the NameSystem been called)
     static {
@@ -131,6 +157,11 @@ class NamesSystem {
         return ans;
     }
 
+    /**
+     *
+     * @param s -
+     * @return a
+     */
     static List<String> AllIncludesString(String s) {
         s = s.toLowerCase();
         List<String> ans = new ArrayList<>();
@@ -145,4 +176,9 @@ class NamesSystem {
         return ans;
     }
 
+    static String GenerateName(){
+        Map<String, Map<String, Integer>> temp = new HashMap<>();
+        Map<String, Map<String, Integer>> countingMap = new HashMap<>(temp);
+        return null;
+    }
 }

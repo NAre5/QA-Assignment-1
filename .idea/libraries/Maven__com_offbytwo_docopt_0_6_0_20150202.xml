@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.offbytwo:docopt:0.6.0.20150202">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/offbytwo/docopt/0.6.0.20150202/docopt-0.6.0.20150202.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/offbytwo/docopt/0.6.0.20150202/docopt-0.6.0.20150202-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/offbytwo/docopt/0.6.0.20150202/docopt-0.6.0.20150202-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
